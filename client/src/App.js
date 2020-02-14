@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import PlayerContainer from "./components/getPlayers";
 import useDarkMode from "./components/useDarkMode";

@@ -1,5 +1,6 @@
 import React from "react";
 import Axios from "axios";
+import { LineChart, XAxis, Tooltip, CartesianGrid, Line } from "recharts";
 
 export default class PlayerContainer extends React.Component
 {
@@ -28,6 +29,17 @@ export default class PlayerContainer extends React.Component
     {
         return (
             <div>
+                <LineChart
+                    width={1000}
+                    height={400}
+                    data={this.state.players}
+                    margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
+                >
+                    <XAxis dataKey="name" />
+                    <Tooltip />
+                    <CartesianGrid stroke="#f5f5f5" />
+                    <Line type="monotone" dataKey="searches" stroke="#ff7300" yAxisId={0} />
+                </LineChart>
                 {
                     this.state.players.map((i)=>
                     {

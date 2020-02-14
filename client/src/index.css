@@ -20,3 +20,8 @@ body
 {
   opacity: 0.85;
 }
+
+.dark-mode div .recharts-default-tooltip p
+{
+  color: black;
+}

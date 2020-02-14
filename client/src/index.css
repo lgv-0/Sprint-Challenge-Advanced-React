@@ -15,3 +15,8 @@ body
   background-color: #222;
   color: white;
 }
+
+.dark-mode input[type="checkbox"]
+{
+  opacity: 0.85;
+}

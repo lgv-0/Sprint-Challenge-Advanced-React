@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import PlayerContainer from "./components/getPlayers";
+import useDarkMode from "./components/useDarkMode";
 
-function App() {
+function App()
+{
+  const [darkMode, setDarkMode] = useDarkMode(false);
+
+  let checkChange = function(e)
+  {
+    setDarkMode(e.target.checked);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <label htmlFor="darkchange">Dark-Mode</label>
+      <input type="checkbox" id="darkchange" onChange={checkChange} checked={darkMode} />
+      <PlayerContainer />
     </div>
   );
 }
